@@ -74,5 +74,16 @@ def random_point(size):
     return randint(0, size - 1)
 
 
+def valid_coordinates(x, y, board):
+    """
+    Check if the coordinates (x, y) are valid for the given board.
+    if the coordinate is valid return true, false otherwise
+    """
+    if 0 <= x < board.size and 0 <= y < board.size:
+        if (x, y) not in board.guesses:
+            return True
+
+    return False
+
 
 
