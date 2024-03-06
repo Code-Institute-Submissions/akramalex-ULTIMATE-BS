@@ -20,11 +20,31 @@ class Board:
         self.guesses = []
         self.ships = []
 
+    def print_board(self):
+        """
+        Prints the current state of the board.
+        Each cell of the board is represented by a character.
+        '_' indicates an empty cell.
+        'X' indicates a cell containing a ship.
+        '*' indicates a cell that has been guessed.
+        """
+        for row in self.board:
+            print("  ".join(row))
 
-board = Board(5, 3, "player1," , "player")
-print("Board size:", board.size)
-print("Number of ships:", board.num_ships)
-print("Player name:", board.name)
-print("Board type:", board.type)
-print("Guesses:", board.guesses)
-print("Ships:", board.ships)
+    def guess(self, x, y):
+        """
+        Records a guess on the board and returns the result.
+        x: int, x-coordinate of the guess
+        y: int, y-coordinate of the guess
+        Returns:
+        str: "Hit" if the guess hits a ship, "Miss" otherwise.
+        """
+        self.guesses.append((x, y))
+        self.board[x][y] = "x"
+
+        if (x, y) in self.ships:
+            self.board[x][y] = "*"
+            return "Hit"
+        else:
+            return "Miss"
+
