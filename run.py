@@ -86,4 +86,26 @@ def valid_coordinates(x, y, board):
     return False
 
 
+def populate_board(board):
+    """
+    populate  board with the ships in random positions.
+    """
+    for _ in range(board.num_ships):
+        while True:
+            x = random_point(board.size)
+            y = random_point(board.size)
+            if valid_coordinates(x, y, board):
+                board.add_ship(x, y)
+                break
+
+
+board =Board(5, 3, "player1", "player")
+
+populate_board(board)
+print("board after population with ships:")
+board.print_board()
+    
+             
+
+
 
