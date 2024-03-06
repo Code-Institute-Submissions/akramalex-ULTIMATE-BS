@@ -122,8 +122,35 @@ def make_guess(board):
         else:
             result = board.guess(x, y)
             return x, y, result
-    
-             
 
 
+def play_game(computer_board, player_board):
+    """
+    Play the battleship game.
+    Print the player's board and computer's board
+    call function makes guess (computer_board)
+    to get the result
+    """
+    while True:
+        # Player's turn
+        print("Your board:")
+        player_board.print_board()
+        print("computer's board:")
+        computer_board.print_board()
 
+        print("Your turn:")
+        x, y, result = make_guess(computer_board)
+        if result == "Hit":
+            print("Player guessed:", (x, y))
+            print("Player hit this time.")
+            scores['player'] += 1
+        else:
+            print("Player Guessed:" (x, y))
+            print("Player missed this time.")
+
+        if all((x, y) in computer_board.ships
+               for x in range(computer_board.size)
+               for y in range(computer_board.size)):
+            print("Congratulations! You've sunk all the computer's ships.")
+            print("You Win!")
+            break
