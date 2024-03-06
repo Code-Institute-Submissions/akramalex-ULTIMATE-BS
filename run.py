@@ -65,15 +65,14 @@ class Board:
             if self.type == "player":
                 self.board[x][y] = "@"
 
-board = Board(5, 3, "player1", "player")
-board.add_ship(1, 2)
-board.print_board()
-guess_result = board.guess(1, 2)
-print("Guess result:", guess_result)
-board.add_ship(3, 4)
-board.add_ship(2, 3)
-board.add_ship(4, 4)
-board.print_board()
+
+def random_point(size):
+    """
+    Helper function to return a random integer,
+    between  0 and size.
+    """
+    return randint(0, size - 1)
+
 
 
 
