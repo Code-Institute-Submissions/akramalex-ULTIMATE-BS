@@ -21,7 +21,7 @@ class Board:
         self.ships = []
 
 
-board = Board(size=5, num_ships=3, name="player1," , type="player")
+board = Board(5, 3, "player1," , "player")
 print("Board size:", board.size)
 print("Number of ships:", board.num_ships)
 print("Player name:", board.name)
