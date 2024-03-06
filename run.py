@@ -99,11 +99,29 @@ def populate_board(board):
                 break
 
 
-board =Board(5, 3, "player1", "player")
+def make_guess(board):
+    """
+    Prompt the player to make a guess and return the result.
+    while true the player enter row number between 0 to 4,
+    and column number between 0 to 4
+    if not between 0 to 4 print message "values must be between 0 and 4!
+    please try again"
+    and if the number guessed before ,
+    print message "You've already guessed those coordinates.
+    please try again "
+    otherwise return the players guessed number and result
+    """
+    while True:
+        x = int(input("Enter row number (0-4):\n"))
+        y = int(input("Enter column number (0-4)\n"))
 
-populate_board(board)
-print("board after population with ships:")
-board.print_board()
+        if not (0 <= x < board.size and 0 <= y < board.size):
+            print("Values must be between 0 and 4!.Please try again.")
+        elif (x, y) in board.guesses:
+            print("You've already guessed those coordinates.Please try again.")
+        else:
+            result = board.guess(x, y)
+            return x, y, result
     
              
 
