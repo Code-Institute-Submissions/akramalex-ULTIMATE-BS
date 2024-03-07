@@ -126,12 +126,11 @@ def make_guess(board):
         except ValueError:
             print("You must enter a number!")
 
-
 def play_game(computer_board, player_board):
     """
     Play the battleship game.
     Print the player's board and computer's board
-    call function makes guess
+    call function make_guess
     to get the result
     and update the score as well
     """
@@ -160,7 +159,7 @@ def play_game(computer_board, player_board):
                for y in range(computer_board.size)):
             print("Congratulations! You've sunk all the computer's ships.")
             print("You Win!")
-            break
+            return
 
         #  computer's turn (random guesses)
         while True:
@@ -181,7 +180,7 @@ def play_game(computer_board, player_board):
                for x in range(player_board.size)
                for y in range(player_board.size)):
             print("Oops! The computer has sunk all your ships. You lose!")
-            break
+            return
 
         print("-" * 35)
         print("After this round, the scores are:")
@@ -189,7 +188,7 @@ def play_game(computer_board, player_board):
               f" Computer: {scores['computer']}")
         print("-" * 35)
 
-        # Ask the player to continue or quite
+        # Check if the player wants to continue or quit
         choice = input("Enter any key to continue or 'n' to quit:\n")
         if choice.lower() == 'n':
             new_game()
