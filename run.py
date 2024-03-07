@@ -112,16 +112,19 @@ def make_guess(board):
     otherwise return the players guessed number and result
     """
     while True:
-        x = int(input("Enter row number (0-4):\n"))
-        y = int(input("Enter column number (0-4)\n"))
+        try:
+            x = int(input("Enter row number (0-4):\n "))
+            y = int(input("Enter column number (0-4):\n "))
 
-        if not (0 <= x < board.size and 0 <= y < board.size):
-            print("Values must be between 0 and 4!.Please try again.")
-        elif (x, y) in board.guesses:
-            print("You've already guessed those coordinates.Please try again.")
-        else:
-            result = board.guess(x, y)
-            return x, y, result
+            if not (0 <= x < board.size and 0 <= y < board.size):
+                print("Values must be between 0 and 4!. Please try again.")
+            elif (x, y) in board.guesses:
+                print("You can't guess the same coordinates twice!")
+            else:
+                result = board.guess(x, y)
+                return x, y, result
+        except ValueError:
+            print("You must enter a number!")
 
 
 def play_game(computer_board, player_board):
