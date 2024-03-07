@@ -164,9 +164,9 @@ def play_game(computer_board, player_board):
 
         #  computer's turn (random guesses)
         while True:
-           x = random_point(player_board.size)
-           y = random_point(player_board.size)
-           if (x, y) not in player_board.guesses:
+            x = random_point(player_board.size)
+            y = random_point(player_board.size)
+            if (x, y) not in player_board.guesses:
                 break
         result = player_board.guess(x, y)
         if result == "Hit":
