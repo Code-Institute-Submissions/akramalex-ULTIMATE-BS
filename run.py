@@ -207,8 +207,16 @@ def new_game():
     print(f"Board Size: {size}. Number of ships: {num_ships}")
     print("Top left corner is row: 0, col: 0")
     print("-" * 35)
-    player_name = input("Please enter your name: \n")
-    print("-" * 35)
+    while True:
+        player_name = input("Please enter your name: \n")
+        if player_name.isalpha():
+            print("-" * 35)
+            print("Let's start the game,", player_name, "!")
+            print("-" * 35)
+            break
+
+        else:
+            print("Name cannot contain  numbers. please try again.")
 
     computer_board = Board(size, num_ships, "computer", type="computer")
     player_board = Board(size, num_ships, player_name, type="player")
