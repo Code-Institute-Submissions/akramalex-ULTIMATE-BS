@@ -168,7 +168,7 @@ def play_game(computer_board, player_board):
             print("Computer got a hit!")
             scores['computer'] += 1
         else:
-            print("Computer guess:", (x, y))
+            print("Computer guessed:", (x, y))
             print("Computer missed this time.")
 
         if all((x, y) in player_board.ships
