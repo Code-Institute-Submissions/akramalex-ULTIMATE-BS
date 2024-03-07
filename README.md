@@ -7,7 +7,7 @@ Users can try to beat the computer by finding all of the computer's battleships 
 
  Each battleship occupies one square on the board.
 
-![](assets/sc1.png)
+![](assets/main.png)
 
 ## How to play
 
