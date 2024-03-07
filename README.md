@@ -36,3 +36,16 @@ The winner is the one who sinks all of their opponent's battleships first.
       - The player cannot see where the computer's ships are.
 
 ![](assets/sc2.png)
+
+
+   * Play against the computer.
+   * Accepts user input. 
+   * Maintenance of scores. 
+   * Display of the player's guessed positions.
+   * Indication of whether the guess was a hit or a miss. 
+   * Option to continue playing or quit.
+
+   ![](assets/sc3.png)
+
+
+    
