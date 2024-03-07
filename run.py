@@ -186,6 +186,7 @@ def play_game(computer_board, player_board):
         # Ask the player to continue or quite
         choice = input("Enter any key to continue or 'n' to quit:\n ")
         if choice.lower() == 'n':
+            new_game()
             break
 
 
