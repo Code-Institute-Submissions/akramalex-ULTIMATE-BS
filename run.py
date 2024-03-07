@@ -151,16 +151,13 @@ def play_game(computer_board, player_board):
             print("Player guessed:", (x, y))
             print("player got a hit!")
             scores['player'] += 1
+            if scores['player'] == player_board.num_ships:
+                print("Congratulations! You've sunk all the computer's ships.")
+                print("You Win!")
+                return
         else:
             print("Player guessed:", (x, y))
             print("Player missed this time.")
-
-        if all((x, y) in computer_board.ships
-               for x in range(computer_board.size)
-               for y in range(computer_board.size)):
-            print("Congratulations! You've sunk all the computer's ships.")
-            print("You Win!")
-            return
 
         #  computer's turn (random guesses)
         while True:
@@ -173,15 +170,12 @@ def play_game(computer_board, player_board):
             print("Computer guessed:", (x, y))
             print("Computer got a hit!")
             scores['computer'] += 1
+            if scores["computer"] == player_board.num_ships:
+                print("Oops! The computer has sunk all your ships. You lose!")
+                return
         else:
             print("Computer guessed:", (x, y))
             print("Computer missed this time.")
-
-        if all((x, y) in player_board.ships
-               for x in range(player_board.size)
-               for y in range(player_board.size)):
-            print("Oops! The computer has sunk all your ships. You lose!")
-            return
 
         print("-" * 35)
         print("After this round, the scores are:")
