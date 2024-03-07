@@ -145,7 +145,7 @@ def play_game(computer_board, player_board):
             print("Player hit this time.")
             scores['player'] += 1
         else:
-            print("Player Guessed:" (x, y))
+            print("Player guessed:", (x, y))
             print("Player missed this time.")
 
         if all((x, y) in computer_board.ships
@@ -172,3 +172,19 @@ def play_game(computer_board, player_board):
                for y in range(player_board.size)):
             print("Oops! The computer has sunk all your ships. You lose!")
             break
+
+        print("-" * 35)
+        print("After this round, the scores are:")
+        print(f"{player_board.name}: {scores['player']}."
+              f" Computer: {scores['computer']}")
+        print("-" * 35)
+
+        # Ask the player to continue or quite
+        choice = input("Enter any key to continue or 'n' to quit: ")
+        if choice.lower() == 'n':
+            break
+
+player_board = Board(5, 3, "Player", "player")
+computer_board = Board(5, 3, "Computer", "computer")
+populate_board(computer_board)
+play_game(computer_board, player_board)
