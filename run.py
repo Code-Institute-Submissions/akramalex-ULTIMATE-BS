@@ -154,3 +154,21 @@ def play_game(computer_board, player_board):
             print("Congratulations! You've sunk all the computer's ships.")
             print("You Win!")
             break
+
+        #  computer's turn (random guesses)
+        x = random_point(player_board.size)
+        y = random_point(player_board.size)
+        result = player_board.guess(x, y)
+        if result == "Hit":
+            print("Computer guessed:", (x, y))
+            print("Computer hit this time.")
+            scores['computer'] += 1
+        else:
+            print("Computer guess:", (x, y))
+            print("Computer missed this time.")
+
+        if all((x, y) in player_board.ships
+               for x in range(player_board.size)
+               for y in range(player_board.size)):
+            print("Oops! The computer has sunk all your ships. You lose!")
+            break
