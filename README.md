@@ -47,5 +47,7 @@ The winner is the one who sinks all of their opponent's battleships first.
 
    ![](assets/sc3.png)
 
+   ###
+
 
     
