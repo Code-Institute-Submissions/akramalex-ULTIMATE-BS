@@ -22,3 +22,17 @@ Guesses are marked on the board with an 'X', while hits are indicated by '*'.
 The player takes turns to make guesses and try to sink the battleships, while at the same time, the computer tries to hit the player's ships.
 
 The winner is the one who sinks all of their opponent's battleships first.
+
+## Features
+
+### Existing Features
+
+   * Game start
+      - Once the player enters their name, the game starts.
+      - The game begins by granting the player's (name) board, followed by the computer's board.
+    
+   * Random board generation
+      - Ships are randomly placed on both the player and computer boards.
+      - The player cannot see where the computer's ships are.
+
+![](assets/sc2.png)
