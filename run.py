@@ -112,8 +112,8 @@ def make_guess(board):
     otherwise return the players guessed number and result
     """
     while True:
-        x = int(input("Enter row number (0-4):\n"))
-        y = int(input("Enter column number (0-4)\n"))
+        x = int(input("Enter row number (0-4):\n "))
+        y = int(input("Enter column number (0-4)\n "))
 
         if not (0 <= x < board.size and 0 <= y < board.size):
             print("Values must be between 0 and 4!.Please try again.")
@@ -128,9 +128,13 @@ def play_game(computer_board, player_board):
     """
     Play the battleship game.
     Print the player's board and computer's board
-    call function makes guess (computer_board)
+    call function makes guess
     to get the result
+    and update the score as well
     """
+    populate_board(computer_board)
+    populate_board(player_board)
+
     while True:
         # Player's turn
         print("Your board:")
@@ -184,7 +188,28 @@ def play_game(computer_board, player_board):
         if choice.lower() == 'n':
             break
 
-player_board = Board(5, 3, "Player", "player")
-computer_board = Board(5, 3, "Computer", "computer")
-populate_board(computer_board)
-play_game(computer_board, player_board)
+
+def new_game():
+    """
+    Starts a new game. Sets the board and size and number of ships,
+    resets the scores, and initializes the board.
+    """
+    size = 5
+    num_ships = 4
+    scores["computer"] = 0
+    scores["player"] = 0
+    print("-" * 35)
+    print("Welcome to ULTIMATE BATTLESHIPS!")
+    print(f"Board Size: {size}. Number of ships: {num_ships}")
+    print("Top left corner is row: 0, col: 0")
+    print("-" * 35)
+    player_name = input("Please enter your name: \n")
+    print("-" * 35)
+
+    computer_board = Board(size, num_ships, "computer", type="computer")
+    player_board = Board(size, num_ships, player_name, type="player")
+
+    play_game(computer_board, player_board)
+
+
+new_game()
