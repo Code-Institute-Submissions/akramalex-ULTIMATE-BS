@@ -113,8 +113,8 @@ def make_guess(board):
     """
     while True:
         try:
-            x = int(input("Enter row number (0-4):\n "))
-            y = int(input("Enter column number (0-4):\n "))
+            x = int(input("Enter row number (0-4):\n"))
+            y = int(input("Enter column number (0-4):\n"))
 
             if not (0 <= x < board.size and 0 <= y < board.size):
                 print("Values must be between 0 and 4!. Please try again.")
@@ -163,8 +163,11 @@ def play_game(computer_board, player_board):
             break
 
         #  computer's turn (random guesses)
-        x = random_point(player_board.size)
-        y = random_point(player_board.size)
+        while True:
+           x = random_point(player_board.size)
+           y = random_point(player_board.size)
+           if (x, y) not in player_board.guesses:
+                break
         result = player_board.guess(x, y)
         if result == "Hit":
             print("Computer guessed:", (x, y))
