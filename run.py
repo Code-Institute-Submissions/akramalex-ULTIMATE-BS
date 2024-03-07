@@ -146,7 +146,7 @@ def play_game(computer_board, player_board):
         x, y, result = make_guess(computer_board)
         if result == "Hit":
             print("Player guessed:", (x, y))
-            print("Player hit this time.")
+            print("layer got a hit!")
             scores['player'] += 1
         else:
             print("Player guessed:", (x, y))
@@ -165,7 +165,7 @@ def play_game(computer_board, player_board):
         result = player_board.guess(x, y)
         if result == "Hit":
             print("Computer guessed:", (x, y))
-            print("Computer hit this time.")
+            print("Computer got a hit!")
             scores['computer'] += 1
         else:
             print("Computer guess:", (x, y))
