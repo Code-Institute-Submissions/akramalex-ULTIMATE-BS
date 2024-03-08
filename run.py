@@ -220,6 +220,12 @@ def new_game():
     computer_board = Board(size, num_ships, "computer", type="computer")
     player_board = Board(size, num_ships, player_name, type="player")
 
+    # Clearing the ships and guesses lists
+    computer_board.ships = []
+    computer_board.guesses = []
+    player_board.ships = []
+    player_board.guesses = []
+
     play_game(computer_board, player_board)
 
 
