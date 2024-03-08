@@ -63,8 +63,8 @@ class Board:
         else:
             self.ships.append((x, y))
             if self.type == "player":
-                self.board[x][y] = "@"
-
+                self.board[x][y] = "@"    
+        
 
 def random_point(size):
     """
@@ -90,13 +90,12 @@ def populate_board(board):
     """
     populate  board with the ships in random positions.
     """
-    for _ in range(board.num_ships):
-        while True:
-            x = random_point(board.size)
-            y = random_point(board.size)
-            if valid_coordinates(x, y, board):
-                board.add_ship(x, y)
-                break
+
+    while len(board.ships) < board.num_ships:
+        x = random_point(board.size)
+        y = random_point(board.size)
+        if valid_coordinates(x, y, board) and (x, y) not in board.ships:
+            board.add_ship(x, y)
 
 
 def make_guess(board):
