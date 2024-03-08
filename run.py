@@ -90,13 +90,11 @@ def populate_board(board):
     """
     populate  board with the ships in random positions.
     """
-    for _ in range(board.num_ships):
-        while True:
-            x = random_point(board.size)
-            y = random_point(board.size)
-            if valid_coordinates(x, y, board):
-                board.add_ship(x, y)
-                break
+    while len(board.ships) < board.num_ships:
+        x = random_point(board.size)
+        y = random_point(board.size)
+        if valid_coordinates(x, y, board):
+            board.add_ship(x, y)
 
 
 def make_guess(board):
@@ -219,9 +217,6 @@ def new_game():
 
     computer_board = Board(size, num_ships, "computer", type="computer")
     player_board = Board(size, num_ships, player_name, type="player")
-
-    while len(player_board.ships) < num_ships:
-        populate_board(player_board)
 
 
     play_game(computer_board, player_board)
