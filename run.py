@@ -154,6 +154,7 @@ def play_game(computer_board, player_board):
             if scores['player'] == player_board.num_ships:
                 print("Congratulations! You've sunk all the computer's ships.")
                 print("You Win!")
+                new_game()
                 return
         else:
             print("Player guessed:", (x, y))
@@ -172,6 +173,7 @@ def play_game(computer_board, player_board):
             scores['computer'] += 1
             if scores["computer"] == player_board.num_ships:
                 print("Oops! The computer has sunk all your ships. You lose!")
+                new_game()
                 return
         else:
             print("Computer guessed:", (x, y))
