@@ -90,13 +90,16 @@ def populate_board(board):
     """
     populate  board with the ships in random positions.
     """
-    for _ in range(board.num_ships):
-        while True:
-            x = random_point(board.size)
-            y = random_point(board.size)
-            if valid_coordinates(x, y, board):
-                board.add_ship(x, y)
-                break
+    while len(board.ships) < board.num_ships:
+        x = random_point(board.size)
+        y = random_point(board.size)
+        if valid_coordinates(x, y, board):
+            board.add_ship(x, y)
+    # Check if all ships have been successfully placed
+    if len(board.ships) < board.num_ships:
+        print("Error: Unable to place all ships. Restarting ship placement.")
+        board.ships = []  # Reset ships
+        populate_board(board)  # Retry ship placement
 
 
 def make_guess(board):
