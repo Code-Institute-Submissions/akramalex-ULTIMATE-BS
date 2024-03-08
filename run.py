@@ -63,8 +63,8 @@ class Board:
         else:
             self.ships.append((x, y))
             if self.type == "player":
-                self.board[x][y] = "@"    
-        
+                self.board[x][y] = "@"
+
 
 def random_point(size):
     """
@@ -218,7 +218,6 @@ def new_game():
 
     computer_board = Board(size, num_ships, "computer", type="computer")
     player_board = Board(size, num_ships, player_name, type="player")
-
 
     play_game(computer_board, player_board)
 

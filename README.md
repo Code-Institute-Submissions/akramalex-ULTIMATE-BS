@@ -69,5 +69,13 @@ The winner is the one who sinks all of their opponent's battleships first.
 
       ![](assets/sc7.png)
 
+   * End of the game.
+
+     - If either the computer or the player sinks the other's ships, 
+     the game finishes by declaring a winner.
+     - After that, an option to start a new game is provided.
+
+      ![](assets/sc8.png)
+
 
     
