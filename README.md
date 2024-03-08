@@ -48,5 +48,26 @@ The winner is the one who sinks all of their opponent's battleships first.
    ![](assets/sc3.png)
 
 
+   * Input validation and error  Checking
+      
+      - The Name has to contain only alphabetic letters.
+
+      - You must enter numbers.
+
+      - You cannot enter coordinates outside the size of the grid.
+
+      - You cannot enter the same guess twice.
+
+      ![](assets/sc4.png)
+
+
+      ![](assets/sc5.png)
+
+
+      ![](assets/sc6.png)
+
+
+      ![](assets/sc7.png)
+
 
     
