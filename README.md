@@ -115,15 +115,15 @@ I have manually tested this project by performing the following steps:
 
    ## Bugs 
    
-   ###  Solved Bugs
+   ### Solved Bugs
 
-     * When I deployed the project, the game was never ending. I updated the play_game function to finish the game once the score reached the number of ships for either player, and then called the new_game function.
+   * When I deployed the project, the game was never ending. I updated the play_game function to finish the game once the score reached the number of ships for either player, and then called the new_game function.
 
-     * My populate_board function was not working properly because I hadn't structured the while statement properly.
+   * My populate_board function was not working properly because I hadn't structured the while statement properly
 
+   ### Remaining bugs
 
-   ### Remaining Bugs
-     * No Bugs Remaining.
+   * No bugs remaining.
 
    ### Validator Testing
    * PEP8
