@@ -111,3 +111,42 @@ I have manually tested this project by performing the following steps:
    * Tested in my local terminal and the Heroku terminal.
 
      ![](assets/sc9.png)
+
+
+   ## Bugs 
+   
+   ###  Solved Bugs
+
+     * When I deployed the project, the game was never ending. I updated the play_game function to finish the game once the score reached the number of ships for either player, and then called the new_game function.
+
+     * My populate_board function was not working properly because I hadn't structured the while statement properly.
+
+
+   ### Remaining Bugs
+     * No Bugs Remaining.
+
+   ### Validator Testing
+   * PEP8
+      - No errors were returned from [PEP8](https://pep8ci.herokuapp.com/)
+
+## Deployment 
+
+ This project was deployed using [Heroku](https://dashboard.heroku.com/apps)
+
+   *  Steps for deployment:
+     
+      - Fork or clone this repository
+      - Create a new heroku app
+      - Set the buildbacks to python and nodeJS in that order
+      - Link the heroku app to the repository
+      - Click on Deploy
+
+## Credits 
+
+ *  [Heroku](https://dashboard.heroku.com/apps) for the deployment terminal 
+
+* [PEP8](https://pep8ci.herokuapp.com/)
+ for check the validated code 
+
+* [Wikipedia](https://en.wikipedia.org/wiki/Battleship_(game)) for the details of the battleships game 
+      
