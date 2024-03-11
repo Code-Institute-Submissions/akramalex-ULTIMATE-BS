@@ -104,11 +104,31 @@ The class also has methods to assist in playing the game, such as a print method
 
 I have manually tested this project by performing the following steps:
   
-   * Passed the code through a PFP8 linter and confirmed that there are no problems.
+* Passed the code through a PFP8 linter and confirmed that there are no problems.
 
-   * Given invalid inputs: strings when number are expected, out of bounds inputs, same input twice 
+* Handling Invalid Inputs 
+
+     * When playing the game, it's essential to provide valid inputs to ensure a smooth experience. Here are the rules regarding invalid inputs:
+
+         -  Invalid Player Name:
+
+            -  If the player enters a name containing non-alphabetic characters, an error message will be displayed: "Name cannot contain numbers. Please try again."
+
+         - Invalid Guess Coordinates:
+
+            - If the player enters non-numeric values for row or column guesses, an error will occur: "Guess column or row must be a number. Please try again."
+
+         - Repeating Guesses:
+
+           * If the player tries to guess the same coordinates twice, they will receive the following error: "You can't guess the same coordinates twice! Please try again."
+         - Out-of-Bounds Coordinates:
+
+           * If the player enters coordinates outside the range of 0 to 4, they will receive the error: "Values must be between 0 and 4! Please try again."
+           Following these guidelines ensures a seamless gaming experience without encountering errors due to invalid inputs.
+   
    
    * Tested in my local terminal and the Heroku terminal.
+
 
      ![](assets/sc9.png)
 
@@ -135,7 +155,7 @@ I have manually tested this project by performing the following steps:
 
    *  Steps for deployment:
      
-      - Fork or clone this repository
+      - Fork or clone this repository in Visual Studio Code using the Code Institute provided template. 
       - Create a new heroku app
       - Set the buildbacks to python and nodeJS in that order
       - Link the heroku app to the repository
