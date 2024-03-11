@@ -77,5 +77,37 @@ The winner is the one who sinks all of their opponent's battleships first.
 
       ![](assets/sc8.png)
 
+   * Data maintained in class instance.
 
-    
+
+## Future Features 
+
+  * Allow player to select the board size and number of ships.
+
+  * Allow the player to position ships themselves.
+
+  * Have ships larger than 1x1.
+
+
+## Data Model 
+
+   I decided to use a Board class as my model. The Game creates two instances of the Board class to hold the player's and the computer's boards.
+
+   The board class stores the board size, the number of ships, the positions of the ships, the guesses against that board, and details such as the board type (player's board or computer) and the player's name.
+ 
+
+The class also has methods to assist in playing the game, such as a print method to display the current board, an add_ships method to place ships on the board, and an add_guess method to record guesses and determine their outcomes.
+
+
+## Testing
+
+
+I have manually tested this project by performing the following steps:
+  
+   * Passed the code through a PFP8 linter and confirmed that there are no problems.
+
+   * Given invalid inputs: strings when number are expected, out of bounds inputs, same input twice 
+   
+   * Tested in my local terminal and the Heroku terminal.
+
+     ![](assets/sc9.png)

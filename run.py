@@ -5,7 +5,7 @@ scores = {"computer": 0, "player": 0}
 
 class Board:
     """
-    Main board class. Sets board size,
+    Main board class. Sets the board size,
     the number of ships, the player's name
     and the board type(player board or computer board)
     Has methods for adding ships and guesses and printing the board
@@ -24,8 +24,8 @@ class Board:
         """
         Prints the current state of the board.
         Each cell of the board is represented by a character.
-        '_' indicates an empty cell.
-        'X' indicates a cell containing a ship.
+        '_' indicates an empty cell,
+        'X' indicates a cell containing a ship, and
         '*' indicates a cell that has been guessed.
         """
         for row in self.board:
@@ -34,10 +34,11 @@ class Board:
     def guess(self, x, y):
         """
         Records a guess on the board and returns the result.
-        x: int, x-coordinate of the guess
-        y: int, y-coordinate of the guess
+        Parameters:
+        x: int - x-coordinate of the guess
+        y: int - y-coordinate of the guess
         Returns:
-        str: "Hit" if the guess hits a ship, "Miss" otherwise.
+        str - a string representing the result of the guess.
         """
         self.guesses.append((x, y))
         self.board[x][y] = "x"
@@ -52,9 +53,9 @@ class Board:
         """
         adds a ship to the board at the specified coordinates
         if the number of ships on the board has reached the maximum limit.
-        an error message if printed indicating the no more ships can be added.
-        otherwise, the ship is added to the board at the specified coordinates,
-        and if the board type is "player"
+        An error message if printed indicating the no more ships can be added.
+        Otherwise, the ship is added to the board at the specified coordinates,
+        and if the board type is "player",
         the corresponding cell on the player's
         board is marked with "@" to represent the ship
         """
@@ -77,7 +78,7 @@ def random_point(size):
 def valid_coordinates(x, y, board):
     """
     Check if the coordinates (x, y) are valid for the given board.
-    if the coordinate is valid return true, false otherwise
+    If the coordinate is valid return True; otherwise, return False.
     """
     if 0 <= x < board.size and 0 <= y < board.size:
         if (x, y) not in board.guesses:
@@ -88,7 +89,7 @@ def valid_coordinates(x, y, board):
 
 def populate_board(board):
     """
-    populate  board with the ships in random positions.
+    Populate the board with the ships in random positions.
     """
 
     while len(board.ships) < board.num_ships:
@@ -101,14 +102,14 @@ def populate_board(board):
 def make_guess(board):
     """
     Prompt the player to make a guess and return the result.
-    while true the player enter row number between 0 to 4,
-    and column number between 0 to 4
-    if not between 0 to 4 print message "values must be between 0 and 4!
-    please try again"
-    and if the number guessed before ,
+    While true, the player enters a row number between 0 and 4,
+    and column number between 0 and 4.
+    If the values are not between 0 and 4 ,
+    Print message "values must be between 0 and 4! please try again"
+    If the number has been  guessed before,
     print message "You've already guessed those coordinates.
     please try again "
-    otherwise return the players guessed number and result
+    Otherwise, return the player's guessed number and result
     """
     while True:
         try:
@@ -130,7 +131,7 @@ def play_game(computer_board, player_board):
     """
     Play the battleship game.
     Print the player's board and computer's board
-    call function makes guess
+    Call function makes_guess
     to get the result
     and update the score as well
     """
