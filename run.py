@@ -188,8 +188,8 @@ def play_game(computer_board, player_board):
         # Ask the player to continue or quite
         choice = input("Enter any key to continue or 'n' to quit:\n")
         if choice.lower() == 'n':
-            new_game()
-            return
+            print("thank you")
+            sys.exit()
 
 
 def new_game():
@@ -225,7 +225,6 @@ def new_game():
     except KeyboardInterrupt:
         print("\nGame interrupted. Exiting...")
         return
-
 
 
 new_game()
