@@ -220,11 +220,17 @@ def new_game():
     computer_board = Board(size, num_ships, "computer", type="computer")
     player_board = Board(size, num_ships, player_name, type="player")
 
+  
+    play_game(computer_board, player_board)
+    
+if __name__ == "__main__":
     try:
-        play_game(computer_board, player_board)
+        new_game()
+
     except KeyboardInterrupt:
         print("\nGame interrupted. Exiting...")
-        return
+
+
 
 
 
