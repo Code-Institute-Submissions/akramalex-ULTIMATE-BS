@@ -189,7 +189,7 @@ def play_game(computer_board, player_board):
         # Ask the player to continue or quite
         choice = input("Enter any key to continue or 'n' to quit:\n")
         if choice.lower() == 'n':
-            print("thank you")
+            print("Thank you for playing!")
             sys.exit()
 
 
