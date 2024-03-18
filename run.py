@@ -216,7 +216,8 @@ def new_game():
             break
 
         else:
-            print("Name cannot contain  numbers. please try again.")
+            print("Name cannot contain numbers or special characters.")
+            print("Please try again.")
 
     computer_board = Board(size, num_ships, "computer", type="computer")
     player_board = Board(size, num_ships, player_name, type="player")
