@@ -58,8 +58,9 @@ The winner is the one who sinks all of their opponent's battleships first.
 
       - You cannot enter the same guess twice.
 
-      ![](assets/sc4.png)
-
+      
+      ![](assets/sc10.png)
+      
 
       ![](assets/sc5.png)
 
